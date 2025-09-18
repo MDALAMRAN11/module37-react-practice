@@ -27,7 +27,7 @@ function App() {
     };
 
     const friendsData = fetchFriends();
-    // console.log(Friends);
+    //console.log(friendsData);
     return (
         <>
             <h1>Vite + React</h1>
@@ -65,8 +65,8 @@ function App() {
                 <Suspense fallback={<h3>Loading Data.......</h3>}>
                     <Users fetchUsers={fetchUsers}></Users>
                 </Suspense>
-                <Suspense fallback={<h3>Friends are comming.....</h3>}>
-                    <Friends Friends={friendsData}></Friends>
+                <Suspense fallback={<h3>Friend are Comming.....</h3>}>
+                    <Friends friendsData={friendsData}></Friends>
                 </Suspense>
             </div>
         </>
