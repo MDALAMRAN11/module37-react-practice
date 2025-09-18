@@ -4,12 +4,17 @@ import Count from "./Count";
 import Batsman from "./Batsman";
 import Users from "./Users";
 import Friends from "./Friends";
+import Posts from "./Posts";
 
 const fetchUsers = fetch("https://jsonplaceholder.typicode.com/users").then(
     (res) => res.json()
 );
 const fetchFriends = async () => {
     const res = await fetch("https://jsonplaceholder.typicode.com/users");
+    return res.json();
+};
+const fetchPosts = async () => {
+    const res = await fetch("https://jsonplaceholder.typicode.com/posts");
     return res.json();
 };
 
@@ -28,9 +33,13 @@ function App() {
 
     const friendsData = fetchFriends();
     //console.log(friendsData);
+    const postData = fetchPosts();
     return (
         <>
             <h1>Vite + React</h1>
+            <Suspense fallback={<h1>Post are comming........</h1>}>
+                <Posts postData={postData}></Posts>
+            </Suspense>
             <div className="div">
                 <button className="button" onClick={handleClick}>
                     Click Me

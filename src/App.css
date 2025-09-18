@@ -53,3 +53,9 @@
     border: 2px solid slateblue;
     border-radius: 20px;
 }
+.cart {
+    margin: 10px;
+    padding: 5px;
+    border: 2px solid yellow;
+    border-radius: 20px;
+}

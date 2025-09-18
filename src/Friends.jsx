@@ -9,7 +9,7 @@ export default function Friends({ friendsData }) {
             <h2>Friend lists</h2>
             <h3>Total Friends : {friends.length}</h3>
             {friends.map((friend) => {
-                console.log(friend);
+                //console.log(friend);
                 return <Friend friend={friend} key={friend.id}></Friend>;
             })}
         </div>
